@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+
+  <style>
+    #chat-window {
+      border: 1px solid grey;
+
+      overflow-y: scroll;
+      overflow-x: hidden;
+
+      width: 25vw;
+      height: 25vh;
+    }
+
+    .bubble {
+      background-color: grey;
+
+      border: 1px solid slategray;
+
+      border-radius: 25px;
+
+      margin: 1rem;
+
+      padding: 2.5rem;
+
+      width: 5vw;
+    }
+  </style>
+</head>
+<body>
+  <h1>What is Daniel?</h1>
+  <p>Daniel is an expression of that unconscious desire within every man to explore what they may in the short time that they have.</p>
+
+  <h1>What does Daniel look like?</h1>
+  <img src="https://cdn.britannica.com/94/152294-050-92FE0C83/Arabian-dromedary-camel.jpg" style="width: 15vw; height: 15vh;" alt="Daniel">
+
+  <h1>Why is Daniel?</h1>
+  <p>Daniel exists because, in 15BC, a Roman gladiator, destined for fame, died. The chain reaction of this shocking event caused Daniel.</p>
+
+  <h1>Where is Daniel?</h1>
+  <div id="map" style="width: 15vw; height: 15vh;"></div>
+
+  <h1>Who is Daniel?</h1>
+  <p>A prize of £250,000 will be given to whosoever provides a satisfactory answer to this question. Contact The Society if you wish to submit an answer.</p>
+
+  <h1>When is Daniel?</h1>
+  <p>7:59PM Monday 2nd August 1887 AD</p>
+
+  <h1>How is Daniel?</h1>
+  <p>This is not currently understood. Daniel breaks all known laws of the Universe.</p>
+
+  <h1>Talk to Daniel!</h1>
+  <p>Chat with him below!</p>
+
+  <div id="chat-window">
+    <div class="bubble">
+      Hi, I'm Daniel! I love feet!
+    </div>
+  </div>
+
+  <button onclick="chat()">
+    Chat with Daniel!
+  </button>
+
+  <script>
+    var map = L.map('map').setView([48.8550537,2.3453708], 5);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: 'Daniel loves feet'
+    }).addTo(map);
+
+    var marker = L.marker([48.8550537,2.3453708]).addTo(map);
+  </script>
+
+  <script>
+    function chat() {
+      const bubble = document.createElement("div");
+      bubble.className = "bubble";
+      bubble.innerText = "Hi, I'm Daniel! I love feet!";
+
+      document.getElementById("chat-window").appendChild(bubble);
+    }
+  </script>
+</body>
+</html>
